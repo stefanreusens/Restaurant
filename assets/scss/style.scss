@@ -1,52 +1,9 @@
 @charset "UTF-8";
 @import "https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css";
-@import url("https://use.typekit.net/oot8rwl.css");
-@import "https://fonts.googleapis.com/css?family=Poppins:400,600|Roboto:200,300|Source+Sans+Pro";
-
-// Variables
-
-$bgcolorlight: #d5d0cd;
-
-$bgcolordark: #130b08;
-
-$textcolor1: #F0F0F0;
-
-$textcolor2: #FAFAFA;
-
-%h1font {
-  font: 400 100%/1.6 Brandon Grotesque, Helvetica, sans-serif;
-  font-size: 5em;
-  color: white;
-}
-
-%navfont {
-  font: 300 100%/1.6 Poppins, Helvetica, sans-serif;
-}
-
-%h2font {
-  font: 400 100%/1.6 Brandon Grotesque, Helvetica, sans-serif;
-  font-size: 2em;
-  padding-bottom: 25px;
-}
-
-%pfont {
-  font: 300 100%/1.4 Roboto, Helvetica, sans-serif;
-  letter-spacing: 1px;
-}
-
-
-%cardfont {
-  font: 300 100%/1.4 Roboto, Helvetica, sans-serif;
-}
-
-// Reusable default silent class
-
-
-// Mixins
+@import "mixins.scss";
 
 // Algemene Stijl
 /* Algemene Stijl */
-
 .selector-for-some-widget {
   box-sizing: content-box;
 }
@@ -55,12 +12,51 @@ h1 {
   @extend %h1font;
 }
 
-/* Images Style */
+h2 {
+  @extend %h2font;
+}
 
+h3 {
+  @extend %h3font;
+}
+
+p {
+  @extend %pfont;
+}
+
+footer h3 {
+  text-align: center;
+}
+header.fotos, header.contact, header.restaurant, header.menu {
+  nav {
+    background: $bgcolorgreen2;
+  }
+}
+
+footer.restaurant {
+  background: $bgcolorgreen2;
+}
+
+/* Bootstrap Blue Borders */
+.btn:focus,
+.btn:active,
+a.page-link,
+li.page-item {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow: none !important;
+  border: 1px solid #FF9D00;
+}
+
+/* Images Style */
 .imglogosm {
   padding: 0;
-  margin: 10px 5px 0 5px;
-  width: 120px;
+  margin: 5px 5px 0 5px;
+  width: 80px;
   height: auto;
 }
 
@@ -68,7 +64,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  height: 100vh;
 }
 
 .mainlogo {
@@ -76,20 +72,23 @@ h1 {
   display: block;
 }
 
-/* ------------------------------ Body ------------------------------ */
-
-
+.navbar {
+  box-shadow: 0px 0px 30px -5px rgba(0, 0, 0, .5);
+}
 
 /* ------------------------------ Header ------------------------------ */
-
 header {
   nav {
     @extend %navfont;
-    background: rgba(19, 11, 8, .7);
+    background: rgba(29, 33, 28, .8);
     text-align: center;
     color: $textcolor1;
     overflow: hidden;
 
+    .navbar-dark,
+    .navbar-toggler {
+      border: none;
+    }
 
     ul li {
       transition: .3s ease-in-out;
@@ -97,14 +96,10 @@ header {
       &:last-child {
         margin-bottom: 1em;
       }
-
-      &:hover {
-        transform: scale(1.3);
+      &:hover  {
+        color: white;
       }
-
       &.active {
-        transform: scale(1.0);
-
         a:hover {
           cursor: default;
         }
@@ -114,56 +109,50 @@ header {
 }
 
 /* ------------------------------ Header index ------------------------------ */
-
 header.indexheader {
-  background: url(../images/veranda2.jpg) left/cover fixed;
+  background: url(../images/veranda2.jpg) top/cover fixed;
   height: 100vh;
 }
 
 /* ------------------------------ Main ------------------------------ */
+main.index {
+  background: $bgcolorgreen;
+  color: $textcolor1;
+}
 
 main {
-  background: $bgcolordark;
-  color: $textcolor1;
+  .cursief {
+    font-style: italic;
+  }
 
   article {
-    padding: 2em 0;
+    padding: 2em 0 1em 0;
     margin-bottom: 2em;
 
     h2 {
-      @extend %h2font;
       color: $textcolor2;
     }
 
     p {
-      @extend %pfont;
       color: $textcolor1;
     }
   }
 
-  /* ------------------------------ Jumbotron ------------------------------ */
-
+  // -------------------------------------------- Jumbotron ----- 
   .jumbotron {
     background: url(../images/table.jpg) center/cover fixed;
-    // background-image: linear-gradient(to top right, #cdc4c5, #5a0f1b);
     padding: 0;
     margin: 0;
   }
 
   .jumbotron-read {
-    background: rgba(19, 11, 8, .5);
+    background: rgba(19, 11, 8, .65);
     height: 100%;
     padding: 3em 0;
-  }
 
-  h2.display-4 {
-    @extend %h2font;
-    color: $textcolor2;
-  }
-
-  p.lead {
-    @extend %pfont;
-    color: $textcolor2;
+    p {
+      font-size: .8rem;
+    }
   }
 
   a.jumbotronbtn {
@@ -177,13 +166,12 @@ main {
     transition-duration: .25s;
 
     &:hover {
-      background: $textcolor1;
-      border: 1px $textcolor1 solid;
-      color: $bgcolordark;
+      background: $bgcolorgreen2;
+      border: 1px $bgcolorgreen2 solid;
     }
   }
 
-  /* ------------------------------ Cards ------------------------------ */
+  // -------------------------------------------- Cards ----- 
   .cards {
     margin: auto;
   }
@@ -196,38 +184,34 @@ main {
     border: none;
     @extend %cardfont;
 
-    h5 {
-      @extend %h2font;
+    p {
+      color: $bgcolorgreen;
     }
 
     a.btn-primary {
-      color: $bgcolordark;
+      color: $bgcolorgreen;
       background: $bgcolorlight;
-      border: 1px solid $bgcolordark;
+      border: 1px solid $bgcolorgreen;
       margin-top: 30px;
+      font-weight: 300;
+      @extend %pfont;
 
       &:hover {
         color: $textcolor2;
-        background: $bgcolordark;
+        background: $bgcolorgreen2;
+        border: 1px solid $bgcolorgreen2;
       }
     }
   }
 }
 
 /* ------------------------------ Footer ------------------------------ */
-
 footer {
   text-align: center;
-  padding: 3em 0 1.5em;
-
-  h3 {
-    @extend %h2font;
-    font-size: 1.8em;
-    padding-bottom: 1em;
-  }
+  padding: 2rem 0 1.5rem 0;
 
   .favicon {
-    font-size: 2em;
+    font-size: 1.5rem;
     transition: .3s ease-in-out;
 
     &:hover {
@@ -236,38 +220,441 @@ footer {
   }
 
   p {
-    @extend %pfont;
-    padding-top: 2em;
+    padding-top: 1.5rem;
     font-size: 12px;
   }
 }
 
 /* ------------------------------ Footer Index ------------------------------ */
+
 footer.indexfooter {
-  background: $bgcolordark;
+  background: $bgcolorgreen;
   color: $textcolor2;
 
   .favicon {
     color: $bgcolorlight;
 
     &:hover {
-      color: white;
+      color: #FF9D00;
     }
   }
 }
 
+/* ------------------------------ Menu ------------------------------ */
+
+body.menu {
+  background: $bgcolorgreen;
+}
+
+header.menu {
+  background: $bgcolorgreen2;
+
+  nav {
+    background: $bgcolorgreen2;
+  }
+}
+
+main.menu {
+  padding: 1em 0 2em 0;
+  background: #f0f0f0;
+  color: $bgcolorgreen;
+  margin-top: 80px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .list-group-item {
+    background: transparent;
+    color: $bgcolorgreen;
+    font-weight: 300;
+    padding: 10px 10px;
+    @extend %pfont;
+    text-align: center;
+    border: 1px solid $bgcolorgreen3;
+  }
+
+  .list-group-item:hover {
+    background: $bgcolorgreen3;
+    color: $textcolor1;
+  }
+
+  .list-group-item:focus,
+  .list-group-item.active {
+    background: $bgcolorgreen2;
+    color: $textcolor2;
+    cursor: default;
+  }
+
+  .list-group-item:first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  .list-group-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .tab-content {
+    padding: 2em 0;
+    @extend %pfont;
+
+    ul {
+      border-right: 1px solid $bgcolorgreen2;
+    }
+
+    ul li {
+      margin-top: 15px;
+      font-size: .8rem;
+      color: $bgcolorgreen;
+
+      &:last-child {
+        margin-bottom: 15px;
+      }
+    }
+
+    .price {
+      font-style: italic;
+      font-size: .9em;
+      color: #696969;
+    }
+  }
+
+  img.menuimg {
+    display: none;
+    margin: auto;
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 15px;
+    padding: 0;
+  }
+}
+
+/* ------------------------------ Foto's Index ------------------------------ */
+header.fotos {
+  background: $bgcolorgreen;
+}
+
+main.fotos {
+  background: $textcolor1;
+  padding: 80px 0 1.5em 0;
+
+  h2 {
+    color: $bgcolorgreen;
+    margin-top: .5em;
+    text-align: center;
+    padding-bottom: 0;
+  }
+
+  h3 {
+    color: $bgcolorgreen2;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .foto {
+    margin: 1.5em 0;
+  }
+
+  img {
+    margin: auto;
+    padding: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  nav ul.pagination {
+    margin-top: 2em;
+
+    li.disabled {
+      opacity: 0;
+    }
+
+    li.page-item {
+
+      a.page-link {
+        color: $bgcolorgreen;
+        border: none;
+        @extend %pfont;
+        font-weight: 500;
+        font-size: .8em;
+        background: $textcolor1;
+        padding: 5px 10px;
+      }
+
+      a.cirkel {
+        border: 1px solid $bgcolorgreen;
+        border-radius: 50%;
+        margin: 0 10px;
+
+        &:hover,
+        &.active {
+          background: $bgcolorgreen2;
+          color: $bgcolorlight;
+          border: 1px solid $bgcolorgreen2;
+        }
+      }
+
+      a.arrow {
+        transform: scale(1.6);
+      }
+    }
+  }
+
+  nav ul.pagination li.page-item a.page-linkfas {
+    font-size: 1.2em;
+    margin: 0 3px;
+  }
+}
+
+.card-columns .card {
+  margin-bottom: 0;
+}
 
 
-/* Foto's Stijlen */
+/* ------------------------------ Restaurant ------------------------------ */
+main.restaurant {
+  background: $textcolor1;
+  padding-top: 80px;
+
+  .antwerpen,
+  .gent {
+    text-align: left;
+  }
+
+  h2 {
+    color: $bgcolorgreen;
+    margin: 0 auto;
+    padding: 1.5rem 15px 0 15px;
+    text-align: center;
+    width: 100%;
+  }
+
+  h3 {
+    padding: 0 0 1rem 0;
+    margin: auto;
+    text-align: center;
+  }
+
+  h4 {
+    @extend %h4font;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-align: center;
+
+    &.openingsuren {
+      margin-bottom: 20px;
+    }
+  }
+
+  p {
+    padding-bottom: 25px;
+  }
+
+  .iframe {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+  }
+
+  .data {
+    text-align: center;
+    @extend %pfont;
+    margin: 0 auto 30px auto;
+
+    .adres p {
+      text-align: center;
+    }
+
+    ul {
+      line-height: 20px;
+    }
+
+    ul li {
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    ul li:nth-child(n+19) {
+      border-bottom: none;
+    }
+  }
+
+  .antwerpen {
+    h3 {
+      color: $bgcolorgreen2;
+      padding-top: 1.5rem;
+
+      &::after {
+        content:'';
+        display: block;
+        margin: auto;
+        height: 1px;
+        width: 120px;
+        background: $bgcolorgreen2;
+        margin-top: .5rem;
+      }
+    }
+
+    h4 {
+      color: $bgcolorgreen2;
+    }
+
+    ul li {
+      border-bottom: 1px solid $bgcolorgreen2;
+      color: $bgcolorgreen2;
+    }
+
+    ul li:nth-child(3n+2) {
+      border-left: 1px solid $bgcolorgreen2;
+    }
+
+    p { color: $bgcolorgreen2; }
+  }
+
+  .gent {
+    background: $bgcolorgreen2;
+    color: $textcolor1;
+
+    h3 {
+      color: $textcolor2;
+      padding-top: 1.5rem;
+
+      &:after {
+        content:'';
+        display: block;
+        margin: auto;
+        height: 1px;
+        width: 100px;
+        background: $textcolor2;
+        margin-top: .5rem;
+      }
+    }
+
+    ul li:nth-child(3n+2) {
+      border-left: 1px solid $textcolor1;
+    }
+
+    ul li {
+      border-bottom: 1px solid $textcolor1;
+    }
+  }
+}
+
+footer.restaurant {
+  background: $bgcolorgreen2;
+
+  .favicon {
+    color: $textcolor1;
+  }
+}
+
+/* ------------------------------ Contact Index ------------------------------ */
+header.contact {
+  nav {
+    background: $bgcolorgreen2;
+  }
+}
+
+main.contact {
+  @extend %cardfont;
+  padding-top: 80px;
 
 
+  .contactread {
+    background: $textcolor1;
+  }
 
+  h2 {
+    padding-left: 0;
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-top: 0.5em;
+  }
 
+  form.container {
+
+    div.form-group {
+
+      label#naam,
+      label#voornaam,
+      label#bericht,
+      label#onderwerp,
+      label#options {
+        font-weight: 400;
+        padding: 0 0 3px 3px;
+        color: $bgcolorgreen2;
+        letter-spacing: 2px;
+        margin-top: 15px;
+      }
+
+      input[type=text],input::placeholder,
+      textarea,
+      select {
+        background: $textcolor1;
+        letter-spacing: 1px;
+        font-weight: 200;
+        color: $bgcolorgreen2;
+      }
+
+      .form-control:focus {
+        outline: none;
+        box-shadow: none !important;
+      }
+
+      select.onderwerp {
+        text-align: center;
+      }
+    }
+
+    .buttoncenter {
+      text-align: center;
+    }
+
+    button.buttonsend {
+      outline: none;
+      background: none;
+      color: #FF9D00;
+      border: none;
+      margin-bottom: 1em;
+      font-size: 2em;
+      transition: .3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+
+    .modal-content {
+      .modal-header {
+        .modal-title {
+          @extend %h2font;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.contactpic {
+
+  img {
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    display: none;
+    box-shadow: 2px 6px 17px -6px rgba(0,0,0,0.3);
+  }
+}
 
 // Extra small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
 
-// Small devices (landscape phones, 576px and up)
+// Extra Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
   body {
     text-align: center;
@@ -278,25 +665,77 @@ footer.indexfooter {
   }
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    padding: 2em 0;
+// Small devices 
+@media (min-width: 577px) {
+  .card-columns {
+    column-count: 1;
+  }
+
+  main.menu {
+    min-height: 90vh;
+    margin-top: 40px;
+  }
+
+  main.menu .tab-content {
+    padding-top: 0;
+  }
+
+  main.menu {
+    padding: 4em 0 2em 0;
+    h2 {
+      text-align: right;
+    }
+  }
+
+  main.menu .tab-content ul {
+    text-align: right;
+  }
+
+  main.restaurant .antwerpen, main.restaurant .gent {
+    padding-bottom: 40px;
+  }
+
+  main.contact h2 {
+    text-align: left;
   }
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  .card-columns {
+    column-count: 2;
+  }
+
+  .cards {
+    padding: 2em 0;
+  }
+
   .mainlogo {
     width: 325px;
   }
 
-
   body {
+    main {
+
+      p,
+      p.lead,
+      a.jumbotronbtn {
+        font-size: 1em;
+      }
+    }
+
     header {
       nav {
         ul li {
-          padding-right: 2em;
+          margin-right: 2em;
 
           &:last-child {
             margin-bottom: 0;
@@ -305,7 +744,78 @@ footer.indexfooter {
       }
     }
   }
+
+  //Contact Stijlen 
+  body.contact {
+    overflow: hidden;
+  }
 }
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  form.container #buttoncenter {
+    text-align: center;
+  }
+
+  .card-columns {
+    column-count: 3;
+  }
+
+  .contactpic img {
+    display: block;
+  }
+
+  main.menu .tab-content ul li {
+    margin-top: 15px;
+    font-size: .85rem;
+    color: $bgcolorgreen;
+  }
+
+  main.menu .no-margin {
+    margin-right: 0;
+  }
+
+  main.menu .tab-content ul li:first-child {
+    margin-top: 0;
+  }
+
+  main.menu .tab-content ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  main.menu img.menuimg {
+    display: block;
+  }
+
+  main.restaurant {
+
+    p,
+    ul li {
+      font-size: .85rem;
+    }
+
+    h4 {
+      font-size: 1.3rem;
+    }
+
+    h2 {
+      text-align:center;
+    }
+
+    .antwerpen h3 {
+      padding-top: 1rem;
+      padding-bottom: 4rem;
+      text-align: center;
+
+      &::after {
+        width: 160px;
+      }
+    }
+
+    .gent h3 {
+      padding-top: 2rem;
+      padding-bottom: 4rem;
+      text-align: center;
+    }
+  }
+}

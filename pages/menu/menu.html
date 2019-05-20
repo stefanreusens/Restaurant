@@ -25,10 +25,10 @@
   <title>Veranda</title>
 </head>
 
-<body>
-  <header>
+<body class="menu">
+  <header class="fotos menu">
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
       <a class="navbar-brand" href="../../index.html"><img src="../../assets/images/logo.png" alt="" class="imglogosm"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,7 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="../../index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="../../index.html">Home</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#">Menu<span class="sr-only">(current)</span></a>
@@ -46,7 +46,7 @@
             <a class="nav-link" href="../fotos/fotos.html">Foto's</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../restaurant/restaurant.html">Restaurant</a>
+            <a class="nav-link" href="../restaurant/restaurant.html">Restaurants</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../contact/contact.html">Contact</a>
@@ -54,38 +54,108 @@
         </ul>
       </div>
     </nav>
-    <div class="mainlogodiv"><img src="../../assets/images/logo.png" class="mainlogo" alt=""></div>
   </header>
 
-  <main>
+  <main class="menu">
+    <!-- Optie 1 -->
 
+    <div class="container">
+      <h2>Menu</h2>
+      <div class="row">
+        <div class="col-12 col-sm-3 col-md-2">
+          <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home"
+              role="tab" aria-controls="home">Voor</a>
+            <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile"
+              role="tab" aria-controls="profile">Hoofd</a>
+            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages"
+              role="tab" aria-controls="messages">Na</a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+
+              <div class="row align-items-start justify-content-end">
+
+                <ul class="col-12 col-lg-7">
+                  <li>gillardeau oesters – utah beach frankrijk<br><span class="price">4,50</span></li>
+                  <li>artisanale charcuterie<br><span class="price">16,00</span></li>
+                  <li>buffelmozzarella, wilde paddenstoelen bresaola, gegrilde kerstomaat<br><span class="price">15,00</span></li>
+                  <li>burrata, witloof, porchetta en gakarameliseerde ajuin<br><span class="price">15,00</span></li>
+                  <li>foie gras, duindoorn, pruim, hazelnoot en kruisbes<br><span class="price">18.00</li>
+                  <li>soep van aardpeer, cantharel en gerookte eend<br><span class="price">11,00</span></li>
+                </ul>
+
+                <img src="../../assets/images/graanmarktdes.jpg" alt="" class="col-lg-4 menuimg">
+
+              </div>
+            </div>
+            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+
+              <div class="row align-items-start justify-content-end">
+
+                <ul class="col-12 col-lg-7">
+                  <li>spaghetti aglio, olio & peperoncini<br><span class="price">12,00</span></li>
+                  <li>tortellini van pompoen, salieboter en citroen<br><span class="price">15,00</span></li>
+                  <li>ravioli van everzwijn, rozemarijn wilde paddenstoelen<br><span class="price">17,00</span></li>
+                  <li>pappardelle wintertruffel<br><span class="price">25,00</span></li>
+                  <li>risotto met eekhoorntjesbrood en wintertruffel<br><span class="price">29,00</span></li>
+                  <li>zeebaars, knolselder, waterkers, warmoes<br><span class="price">24,00</span></li>
+                  <li>lam, butternut, gebrande berk en duindoorn<br><span class="price">25.00</span></li>
+                </ul>
+
+                <img src="../../assets/images/graanmarkt.jpg" alt="food" class="col-12 col-sm-4 menuimg">
+              </div>
+            </div>
+            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+              <div class="row align-items-start justify-content-end">
+
+                <ul class="col-12 col-lg-7">
+                  <li>kazen<br><span class="price">14,00</span></li>
+                  <li>crème brûlée<br><span class="price">8,00</span></li>
+                  <li>zandtaartje met frambozen, pruim en chantilly room<br><span class="price">9,00</span></li>
+                  <li>chocolade fondant, saffraan en hazelnoot<br><span class="price">9,50</span></li>
+                  <li>tiramisu<br><span class="price">8,50</span></li>
+                  <li>chocolade mousse<br><span class="price">8,00</span></li>
+                </ul>
+                <img src="../../assets/images/graanmarktkoffie.jpg" alt="food" class="col-12 col-sm-4 menuimg">
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </main>
 
-  <footer>
+  <footer class="indexfooter restaurant">
     <div class="container">
-      <section class="row container justify-content-center">
-        <h3 class="col-12">Volg ons op onze sociale media</h3>
+      <section class="row justify-content-center">
         <section class="col-12 row justify-content-center">
-          <a href="#" class="favicon col-3 col-md-2 col-lg-1">
+          <a href="#" class="favicon col-2 col-md-1 col-lg-1" target="_blank">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="#" class="favicon col-3 col-md-2 col-lg-1">
+          <a href="#" class="favicon col-2 col-md-1 col-lg-1" target="_blank">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="#" class="favicon col-3 col-md-2 col-lg-1">
+          <a href="#" class="favicon col-2 col-md-1 col-lg-1" target="_blank">
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="#" class="favicon col-3 col-md-2 col-lg-1">
+          <a href="#" class="favicon col-2 col-md-1 col-lg-1" target="_blank">
             <i class="fab fa-google-plus"></i>
           </a>
         </section>
       </section>
     </div>
+    <p>&copy; Veranda 2019</p>
   </footer>
 
 
 
   <!-- Optional JavaScript -->
+
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>

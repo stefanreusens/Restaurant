@@ -25,10 +25,10 @@
   <title>Veranda</title>
 </head>
 
-<body>
+<body class="index">
   <header class="indexheader">
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-md navbar-dark  fixed-top">
       <a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt="" class="imglogosm"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@
             <a class="nav-link" href="pages/fotos/fotos.html">Foto's</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/restaurant/restaurant.html">Restaurant</a>
+            <a class="nav-link" href="pages/restaurant/restaurant.html">Restaurants</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="pages/contact/contact.html">Contact</a>
@@ -57,83 +57,78 @@
     <div class="mainlogodiv"><img src="assets/images/logo.png" class="mainlogo" alt=""></div>
   </header>
 
-  <main>
-
-    <div class=container>
+  <main class="index">
+<!-- OVER ONS -->    
+    <div class="container">
       <article class="row">
         <h2 class="col-12 col-md-10 offset-md-1">Over Veranda</h2>
-        <p class="col-12 col-md-10 offset-md-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque
-          temporibus, repellat ipsa rerum distinctio, asperiores delectus numquam, fugiat fugit laboriosam facilis
-          dolorem sed ipsam nisi ducimus consectetur iusto saepe dolores necessitatibus labore odit assumenda. Sed
-          voluptatum sit exercitationem nulla eum, at blanditiis voluptates sequi a doloribus accusantium, voluptatem
-          cumque laborum harum rerum sunt doloremque illo praesentium recusandae iste. Accusamus ea modi quae vitae ut
-          ex omnis? Laborum tenetur inventore incidunt distinctio suscipit quas, officia nam.</p>
+        <p class="col-12 col-md-10 offset-md-1">Davy Schellemans en team verhuisden begin 2016 restaurant Veranda naar de oude slachthuisbuurt te Antwerpen Noord, vlakbij het sportpaleis. Zijn seizoensgebonden keuken werkt als vanouds met één menu. 
+        De nieuwe Veranda werd uitgebreid met een walk-in bar waar u zowel de 5 gangen menu kunt nemen of à la carte kunt genieten van gerechten uit het menu, speciaalbieren en natuurwijnen.
+          </p>
       </article>
     </div>
 
+<!-- JUMBOTRON -->
     <div class="jumbotron jumbotron-fluid container-fluid">
       <div class="jumbotron-read">
         <div class="container">
           <div class="row">
-            <h2 class="display-4 col-md-10 offset-md-1">Nieuws</h2>
+            <h2 class="col-md-10 offset-md-1">Nieuws</h2>
             <p class="lead col-md-10 offset-md-1">Wij wensen iedereen fijne feestdagen! Zelf genieten wij van onze vakantie vanaf 23 december
             tot en met 8 januari 2019. Heb je zin om deel uit te
-            maken van een jong en dynamisch team? Aarzel dan zeker niet om ons te contacteren.</p>
+            maken van ons jong en dynamisch team? Aarzel dan zeker niet om ons te contacteren.</p>
           </div>
           <div class="container">
             <div class="text-center">
-                <a href="#" class="btn btn-dark offset-md-1 jumbotronbtn">Neem contact</a>
+                <a href="pages/contact/contact.html" class="btn btn-dark offset-md-1 jumbotronbtn">Neem contact</a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+<!-- CARDS -->
     <div class="cards card-deck container">
-        <div class="card border-dark">
-          <img src="assets/images/detail.jpg" class="card-img-top" alt="...">
+        <div class="card">
+          <img src="assets/images/detail.jpg" class="card-img-top" alt="detail">
           <div class="card-body">
-            <h5 class="card-title">Jong Keukengeweld</h5>
+            <h2 class="card-title">Keukengeweld</h2>
             <p class="card-text">Wij doen mee met <span class="cursief">Jong Keukengeweld</span>. Voor jongeren onder
               de 30 kan je nu aan een lager tarief komen dineren.</p>
-            <a href="#" class="btn btn-primary">Reserveer nu</a>
+            <a href="pages/contact/contact.html" class="btn btn-primary">Reserveer nu</a>
           </div>
         </div>
-
-        <div class="card border-dark">
-          <img src="assets/images/detail-2.jpg" class="card-img-top" alt="...">
+        <div class="card">
+          <img src="assets/images/detail-2.jpg" class="card-img-top" alt="detail2">
           <div class="card-body">
-            <h5 class="card-title">Kerst Cadeaubon</h5>
-            <p class="card-text">Koop nu je kerstcadeau en de gelukkige krijgt ons aanbod aangepaste wijnen van het
-              huis.</p>
-            <a href="#" class="btn btn-primary">Bon kopen</a>
+            <h2 class="card-title">Cadeaubon</h2>
+            <p class="card-text">Als je nu bij ons een cadeaubon koopt voor een vijf gangen menu, dan krijg je de aangepaste wijnen van het huis.</p>
+            <a href="pages/contact/contact.html" class="btn btn-primary">Bon kopen</a>
           </div>
         </div>
-    </div>
-
+      </div>
   </main>
 
   <footer class="indexfooter">
     <div class="container">
-      <section class="row container justify-content-center">
-        <h3 class="col-12">Volg ons</h3>
+      <section class="row justify-content-center">
         <section class="col-12 row justify-content-center">
-          <a href="#" class="favicon col-3 col-md-2 col-lg-1">
+          <a href="#" class="favicon col-2 col-md-1 col-lg-1" target="_blank">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="#" class="favicon col-3 col-md-2 col-lg-1">
+          <a href="#" class="favicon col-2 col-md-1 col-lg-1" target="_blank">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="#" class="favicon col-3 col-md-2 col-lg-1">
+          <a href="#" class="favicon col-2 col-md-1 col-lg-1" target="_blank">
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="#" class="favicon col-3 col-md-2 col-lg-1">
+          <a href="#" class="favicon col-2 col-md-1 col-lg-1" target="_blank">
             <i class="fab fa-google-plus"></i>
           </a>
         </section>
       </section>
     </div>
-    <p>&copy; Rights (Logo and Pictures) Reserved to Veranda</p>
+    <p>&copy; Veranda 2019</p>
   </footer>
 
 
@@ -146,6 +141,7 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
+    
 </body>
 
 </html>

@@ -26,9 +26,9 @@
 </head>
 
 <body>
-  <header>
+  <header class="fotos contact">
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
       <a class="navbar-brand" href="../../index.html"><img src="../../assets/images/logo.png" alt="" class="imglogosm"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@
             <a class="nav-link" href="../fotos/fotos.html">Foto's</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../restaurant/restaurant.html">Restaurant</a>
+            <a class="nav-link" href="../restaurant/restaurant.html">Restaurants</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#">Contact<span class="sr-only">(current)</span></a>
@@ -54,33 +54,103 @@
         </ul>
       </div>
     </nav>
-    <div class="mainlogodiv"><img src="../../assets/images/logo.png" class="mainlogo" alt=""></div>
   </header>
 
-  <main>
-
+  <main class="contact">
+    <div class="contactread">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="container h2">
+              <h2 class="container">Contact</h2>
+            </div>
+            <div class="container">
+              <div class="row">
+                <form class="container">
+                  <div class="row">
+                    <div class="col-12 col-md-6 form-group">
+                      <label for="naam" id="naam">Naam</label>
+                      <input type="text" class="form-control" placeholder="Naam" required="required">
+                    </div>
+                    <div class="col-12 col-md-6 form-group">
+                      <label for="voornaam" id="voornaam">Voornaam</label>
+                      <input type="text" class="form-control" placeholder="Voornaam" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1" id="options">Options</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option hidden selected>Kies een optie</option>
+                      <option>Reservatie</option>
+                      <option>Catering</option>
+                      <option>Vragen over menu</option>
+                      <option>Sollicitatie</option>
+                      <option>Jong Keukengeweld</option>
+                      <option>Cadeaubon</option>
+                      <option>Andere</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="Bericht" id="bericht">Example textarea</label>
+                    <textarea class="form-control" id="Text-area" rows="3" placeholder="..." required></textarea>
+                  </div>
+                  <div class="buttoncenter" id="buttoncenter">
+                    <button type="submit" class="btn buttonsend btn-danger" data-toggle="modal" data-target="#exampleModal">
+                      <i class="fas fa-angle-right"></i>
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Bedankt</h5>
+                            <button type="button" class="close buttonclose" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            Uw bericht is verzonden. We geven u zo spoedig mogelijk een antwoord.
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btnclose btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <section class="contactpic offset-lg-1 col-lg-5">
+            <img src="../../assets/images/menu_back.jpg" alt="">
+          </section>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <footer>
+  <footer class="indexfooter restaurant">
     <div class="container">
-      <section class="row container justify-content-center">
-        <h3 class="col-12">Volg ons op onze sociale media</h3>
+      <section class="row justify-content-center">
         <section class="col-12 row justify-content-center">
-          <a href="#" class="favicon col-3 col-md-2 col-lg-1">
+          <a href="#" class="favicon col-2 col-md-1 col-lg-1" target="_blank">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="#" class="favicon col-3 col-md-2 col-lg-1">
+          <a href="#" class="favicon col-2 col-md-1 col-lg-1" target="_blank">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="#" class="favicon col-3 col-md-2 col-lg-1">
+          <a href="#" class="favicon col-2 col-md-1 col-lg-1" target="_blank">
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="#" class="favicon col-3 col-md-2 col-lg-1">
+          <a href="#" class="favicon col-2 col-md-1 col-lg-1" target="_blank">
             <i class="fab fa-google-plus"></i>
           </a>
         </section>
       </section>
     </div>
+    <p>&copy; Veranda 2019</p>
   </footer>
 
 
