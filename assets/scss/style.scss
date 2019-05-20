@@ -1,0 +1,311 @@
+@charset "UTF-8";
+@import "https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css";
+@import url("https://use.typekit.net/oot8rwl.css");
+@import "https://fonts.googleapis.com/css?family=Poppins:400,600|Roboto:200,300|Source+Sans+Pro";
+
+// Variables
+
+$bgcolorlight: #d5d0cd;
+
+$bgcolordark: #130b08;
+
+$textcolor1: #F0F0F0;
+
+$textcolor2: #FAFAFA;
+
+%h1font {
+  font: 400 100%/1.6 Brandon Grotesque, Helvetica, sans-serif;
+  font-size: 5em;
+  color: white;
+}
+
+%navfont {
+  font: 300 100%/1.6 Poppins, Helvetica, sans-serif;
+}
+
+%h2font {
+  font: 400 100%/1.6 Brandon Grotesque, Helvetica, sans-serif;
+  font-size: 2em;
+  padding-bottom: 25px;
+}
+
+%pfont {
+  font: 300 100%/1.4 Roboto, Helvetica, sans-serif;
+  letter-spacing: 1px;
+}
+
+
+%cardfont {
+  font: 300 100%/1.4 Roboto, Helvetica, sans-serif;
+}
+
+// Reusable default silent class
+
+
+// Mixins
+
+// Algemene Stijl
+/* Algemene Stijl */
+
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+
+h1 {
+  @extend %h1font;
+}
+
+/* Images Style */
+
+.imglogosm {
+  padding: 0;
+  margin: 10px 5px 0 5px;
+  width: 120px;
+  height: auto;
+}
+
+.mainlogodiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.mainlogo {
+  width: 220px;
+  display: block;
+}
+
+/* ------------------------------ Body ------------------------------ */
+
+
+
+/* ------------------------------ Header ------------------------------ */
+
+header {
+  nav {
+    @extend %navfont;
+    background: rgba(19, 11, 8, .7);
+    text-align: center;
+    color: $textcolor1;
+    overflow: hidden;
+
+
+    ul li {
+      transition: .3s ease-in-out;
+
+      &:last-child {
+        margin-bottom: 1em;
+      }
+
+      &:hover {
+        transform: scale(1.3);
+      }
+
+      &.active {
+        transform: scale(1.0);
+
+        a:hover {
+          cursor: default;
+        }
+      }
+    }
+  }
+}
+
+/* ------------------------------ Header index ------------------------------ */
+
+header.indexheader {
+  background: url(../images/veranda2.jpg) left/cover fixed;
+  height: 100vh;
+}
+
+/* ------------------------------ Main ------------------------------ */
+
+main {
+  background: $bgcolordark;
+  color: $textcolor1;
+
+  article {
+    padding: 2em 0;
+    margin-bottom: 2em;
+
+    h2 {
+      @extend %h2font;
+      color: $textcolor2;
+    }
+
+    p {
+      @extend %pfont;
+      color: $textcolor1;
+    }
+  }
+
+  /* ------------------------------ Jumbotron ------------------------------ */
+
+  .jumbotron {
+    background: url(../images/table.jpg) center/cover fixed;
+    // background-image: linear-gradient(to top right, #cdc4c5, #5a0f1b);
+    padding: 0;
+    margin: 0;
+  }
+
+  .jumbotron-read {
+    background: rgba(19, 11, 8, .5);
+    height: 100%;
+    padding: 3em 0;
+  }
+
+  h2.display-4 {
+    @extend %h2font;
+    color: $textcolor2;
+  }
+
+  p.lead {
+    @extend %pfont;
+    color: $textcolor2;
+  }
+
+  a.jumbotronbtn {
+    background: none;
+    padding: .5em 1em;
+    margin-top: 3em;
+    @extend %pfont;
+    color: $textcolor1;
+    background: none;
+    border: 1px $bgcolorlight solid;
+    transition-duration: .25s;
+
+    &:hover {
+      background: $textcolor1;
+      border: 1px $textcolor1 solid;
+      color: $bgcolordark;
+    }
+  }
+
+  /* ------------------------------ Cards ------------------------------ */
+  .cards {
+    margin: auto;
+  }
+
+  .card {
+    color: $bgcolordark;
+    margin-top: 2em;
+    text-align: center;
+    background: $bgcolorlight;
+    border: none;
+    @extend %cardfont;
+
+    h5 {
+      @extend %h2font;
+    }
+
+    a.btn-primary {
+      color: $bgcolordark;
+      background: $bgcolorlight;
+      border: 1px solid $bgcolordark;
+      margin-top: 30px;
+
+      &:hover {
+        color: $textcolor2;
+        background: $bgcolordark;
+      }
+    }
+  }
+}
+
+/* ------------------------------ Footer ------------------------------ */
+
+footer {
+  text-align: center;
+  padding: 3em 0 1.5em;
+
+  h3 {
+    @extend %h2font;
+    font-size: 1.8em;
+    padding-bottom: 1em;
+  }
+
+  .favicon {
+    font-size: 2em;
+    transition: .3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+
+  p {
+    @extend %pfont;
+    padding-top: 2em;
+    font-size: 12px;
+  }
+}
+
+/* ------------------------------ Footer Index ------------------------------ */
+footer.indexfooter {
+  background: $bgcolordark;
+  color: $textcolor2;
+
+  .favicon {
+    color: $bgcolorlight;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+
+
+/* Foto's Stijlen */
+
+
+
+
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  body {
+    text-align: center;
+
+    article {
+      text-align: left;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    padding: 2em 0;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .mainlogo {
+    width: 325px;
+  }
+
+
+  body {
+    header {
+      nav {
+        ul li {
+          padding-right: 2em;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
